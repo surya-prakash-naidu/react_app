@@ -1,0 +1,21 @@
+name: deployment
+on: [push,workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+      - name: install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: run lint
+        run: npm lint
+      - name: run tests
+        run: run test
+      - name: run build
+        run: run build
+        
