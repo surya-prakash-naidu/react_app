@@ -1,7 +1,7 @@
 name: issue_event
 on:
   issues:
-  types: [opened]
+    types: [opened]
 
 jobs:
   get_event_details:
