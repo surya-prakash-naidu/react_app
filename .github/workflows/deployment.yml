@@ -6,16 +6,11 @@ jobs:
     steps:
       - name: get code
         uses: actions/checkout@v3
-      - name: install node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - name: install dependencies
         run: npm ci
       - name: run lint
-        run: npm lint
+        run: npm run lint
       - name: run tests
-        run: run test
+        run: npm run test
       - name: run build
-        run: run build
-        
+        run: npm run build
